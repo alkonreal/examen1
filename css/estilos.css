@@ -1,0 +1,335 @@
+/* ----------------------------------- */
+
+/* ESTILOS GENERALES (Diseño Elástico) */
+
+/* ----------------------------------- */
+
+/* ---------- MEDIA QUERIS ---------- */
+
+/* -------------------- */
+
+/* SMARTPHONE (Vertical)*/
+
+/* -------------------- */
+
+/* Acuerdate que el ultimo media queri, puede pisar lo que los demas tengan
+puesto, tenlo en cuenta.  */
+
+@media only screen and (min-device-width:320px)
+/* Horientacion Vertical */
+
+and (orientation: portrait)
+/* FIN */
+
+    {}
+
+/* -------------------- */
+
+/* TABLET */
+
+/* -------------------- */
+
+/* ---------- VERTICAL ---------- */
+
+@media only screen and (min-device-width:768px) and (orientation: portrait) {}
+
+/* ---------- HORIZONTAL ---------- */
+
+@media only screen and (min-device-width:1024px) and (orientation: landscape) {
+
+
+    * {
+        box-sizing: content-box;
+    }
+
+    .content {
+        display: flex;
+        flex-direction: column;
+        background-color: #1a232e;
+    }
+
+    .header {
+        height: 75px;
+        background-color: gray;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: fixed;
+        width: 100%;
+    }
+
+    .nav {
+        display: flex;
+        justify-content: space-around;
+        width: 75%
+    }
+
+    /* nav a{padding: 10px 20px} */
+
+
+    .item-menu{ position:relative; display:inline; margin: 0px;}
+
+
+    .submenu{ border:1px solid black;
+    padding:10px;
+    width: 200px;
+    display:none;
+    position:absolute;
+    z-index:1;
+    /* Esto es para que salga debajo del link A, si no saldria el menú
+    muy a la izquierda */
+    left: 20px;
+background-color: aquamarine;}
+
+.submenu a{ display:block}
+
+
+
+/* Primero tenemos que elegir la caja item-menu , darle un hover y decirle que va
+haber cambiaos en la caja submenu: 
+
+SI solo pones el hover en esta caso, en la caja submenu, no funcionará, ya que 
+por defecto tiene display:none y no se ve esta caja, no se puede tocar con el puntero del raton*/
+    .item-menu:hover .submenu{display: block;}
+
+    .links {
+        color: white;
+    }
+
+
+    .principal {
+        background-image: url(../img/desktop/cover-2.png);
+        height: 100vh;
+        width: 100%;
+        background-repeat: no-repeat;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+
+    }
+
+    .artprincipal {
+
+
+        display: flex;
+        flex-direction: column;
+        width: 70%;
+        justify-content: center;
+
+        background: rgb(2, 0, 36);
+        background: linear-gradient(90deg, rgba(2, 0, 36, 0.6) 65%, rgba(0, 212, 255, 0.3) 100%, rgba(9, 9, 121, 0.3) 100%);
+        color: white;
+        height: 100vh;
+
+
+    }
+
+
+    .pelicula{font-family: 'Big Shoulders Stencil Text', cursive;font-size: 50px;}
+
+    .actores {
+
+
+        display: flex;
+        width: 40%
+    }
+
+
+
+    .actores li a {
+        margin-left: 20px;
+    }
+
+    .menus {
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content:space-around
+    }
+
+    .amenus {
+
+        background: #1586b8;
+        color: white;
+
+        padding: 20px;
+        border-radius: 10px
+    }
+
+    /* Peliculas */
+
+
+    .titulos {
+        color: white;
+        text-align: center;
+        margin-top: 50px;
+        margin-bottom: 50px;
+    }
+
+
+    #peliculas {
+        margin: 0 auto;
+
+    }
+
+    .gridpeliculas {
+        display: grid;
+        width: 100%;
+        grid-template-columns: auto;
+        /* grid-template-rows: 1fr 1fr 1fr 1fr ; */
+
+        grid-template-areas:
+            "pelis pelis pelis"
+            "pelis pelis pelis"
+            "pelis pelis pelis"
+            "pelis pelis pelis"
+        ;
+        gap: 20px;
+    }
+
+
+    .pelis {}
+
+    .pelis img {
+        width: 300px;
+        height: 200px;
+    }
+
+
+
+    .footer {
+
+        height: 200px;
+        width: 100%;
+        text-align: center;
+        margin-top: 50px;
+
+
+    }
+
+
+
+
+    .footer2 {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+
+        padding-right:40px;
+        padding-left: 40px;
+        margin-top: 50px;
+
+    }
+
+
+    .footers {}
+
+    .copy {
+        color: white
+    }
+
+}
+
+
+
+
+
+
+
+
+
+
+/* -------------------- */
+
+/* ESCRITORIO */
+
+/* -------------------- */
+
+@media only screen and (min-width:1366px) {}
+
+
+
+
+
+
+
+
+/* Para backgrounds o imagenes ,aqui debajo de estas lineas*/
+
+/* CON RETINA DISPLAY DESKTOP  2x-Escritorio*/
+
+@media only screen and (-webkit-pixel-ratio:2),
+/* PARA MOZILLA */
+
+only screen and (-moz-pixel-ratio:2),
+/* PARA MICROSOFT EXPLORER */
+
+only screen and (-ms-pixel-ratio:2) and (min-width:800px) {
+
+    /* EJEMPLO */
+    header {
+        background-image: url(../img/desktop/manoiphonemonitor@2x.jpg)
+    }
+}
+
+/* TABLET */
+
+/* CON RETINA DISPLAY 2X Tablet */
+
+/* ---------- VERTICAL ---------- */
+@media only screen and (-webkit-pixel-ratio:2),
+only screen and (-moz-pixel-ratio:2),
+only screen and (-ms-pixel-ratio:2) and (min-width:768px) and (orientation: portrait) {
+
+    /* EJEMPLO */
+    header {
+        background-image: url(../img/smartphone/manoiphonemonitor@2x.jpg);
+    }
+}
+
+/* ---------- HORIZONTAL ---------- */
+/* PARA IMAGENES EN TABLET, ME DICE QUE NO IMPORTA EL MODO HORIZONTAL */
+/* @media only screen and (-webkit-pixel-ratio:2),
+only screen and (-moz-pixel-ratio:2),
+only screen and (-ms-pixel-ratio:2) and (min-width:1024px) and (orientation: landscape){ */
+/* EJEMPLO */
+/* header {
+        background-image: url(../img/smartphone/manoiphonemonitor@2x.jpg);
+    }
+} */
+
+
+
+
+
+
+
+/* CON RETINA DISPLAY 2X SMARTPHONE */
+
+@media only screen and (-webkit-pixel-ratio:2),
+only screen and (-moz-pixel-ratio:2),
+only screen and (-ms-pixel-ratio:2) and (min-width:320px) {
+
+    /* EJEMPLO */
+    header {
+        background-image: url(../img/smartphone/manoiphonemonitor@2x.jpg);
+    }
+}
+
+/* CON RETINA DISPLAY 3-Movil*/
+
+@media only screen and (-webkit-pixel-ratio:3),
+/* PARA MOZILLA */
+
+only screen and (-moz-pixel-ratio:3),
+/* PARA MICROSOFT EXPLORER */
+
+only screen and (-ms-pixel-ratio:3) {
+
+    /* EJEMPLO */
+    header {
+        background-image: url(../img/smartphone/manoiphonemonitor@3x.jpg)
+    }
+}
